@@ -38,7 +38,7 @@ stdenv.mkDerivation {
     mkdir -p $out/share/icons
 
     cp -R ./installation/hicolor $out/share/icons
-    cp -f ./installation/explorer.desktop $out/share/applications
+    sed "s|~/.local|$out|g" ./installation/explorer.desktop > $out/share/applications/explorer.desktop
     cp -f ./explorer $out/bin
     runHook postInstall
   '';

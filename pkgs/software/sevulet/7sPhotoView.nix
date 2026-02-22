@@ -33,7 +33,7 @@ stdenv.mkDerivation {
     mkdir -p $out/share/icons
 
     cp -R ./installation/hicolor $out/share/icons
-    cp -f ./installation/photoview.desktop $out/share/applications
+    sed "s|~/.local|$out|g" ./installation/photoview.desktop > $out/share/applications/photoview.desktop
     cp -f ./photoview $out/bin
     runHook postInstall
   '';

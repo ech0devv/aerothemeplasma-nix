@@ -31,7 +31,7 @@ stdenv.mkDerivation {
     mkdir -p $out/share/icons
 
     cp -R ./installation/hicolor $out/share/icons
-    cp -f ./installation/stickies.desktop $out/share/applications
+    sed "s|~/.local|$out|g" ./installation/stickies.desktop > $out/share/applications/stickies.desktop
     cp -f ./stickies $out/bin
     runHook postInstall
   '';

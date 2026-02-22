@@ -29,9 +29,9 @@ stdenv.mkDerivation {
     mkdir -p $out/bin
     mkdir -p $out/share/applications
     mkdir -p $out/share/icons
-
+    
     cp -R ./installation/hicolor $out/share/icons
-    cp -f ./installation/notepad.desktop $out/share/applications
+    sed "s|~/.local|$out|g" ./installation/notepad.desktop > $out/share/applications/notepad.desktop
     cp -f ./notepad $out/bin
     runHook postInstall
   '';
