@@ -72,10 +72,10 @@
             aeroglasspane = self.callPackage ./pkgs/software/aeroglasspane.nix {};
             linver = self.callPackage ./pkgs/software/linver.nix {};
 
-            sevulet-explorer = self.callPackage ./pkgs/software/7sExplorer.nix {};
-            sevulet-notepad = self.callPackage ./pkgs/software/7sNotepad.nix {};
-            sevulet-photoview = self.callPackage ./pkgs/software/7sPhotoView.nix {};
-            sevulet-stickies = self.callPackage ./pkgs/software/7sStickies.nix {};
+            sevulet-explorer = self.callPackage ./pkgs/software/sevulet/7sExplorer.nix {};
+            sevulet-notepad = self.callPackage ./pkgs/software/sevulet/7sNotepad.nix {};
+            sevulet-photoview = self.callPackage ./pkgs/software/sevulet/7sPhotoView.nix {};
+            sevulet-stickies = self.callPackage ./pkgs/software/sevulet/7sStickies.nix {};
 
             login-session = self.callPackage ./pkgs/system/login-session.nix {};
             plymouthvista = self.callPackage ./pkgs/system/plymouthvista.nix {};

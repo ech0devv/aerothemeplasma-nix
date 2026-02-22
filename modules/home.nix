@@ -29,7 +29,7 @@ in
     };
   };
   options.programs.linver.enable = lib.mkEnableOption "the Linver application and its KWin rule";
-  options.programs.sevulet.enable = lib.mkEnableOption "the Sevulet software suite"
+  options.programs.sevulet.enable = lib.mkEnableOption "the Sevulet software suite";
 
   config = lib.mkIf cfg.enable {
     assertions = [
@@ -61,7 +61,7 @@ in
       pkgs.kdePackages.qtstyleplugin-kvantum
       libplasma
     ]) ++ lib.optionals config.programs.linver.enable [ atpkgs.linver ]
-       ++ lib.optionals.config.programs.sevulet.enable [ atpkgs.sevulet-explorer atpkgs.sevulet-notepad atpkgs.sevulet-photoview atpkgs.sevulet-stickies ];
+       ++ lib.optionals config.programs.sevulet.enable [ atpkgs.sevulet-explorer atpkgs.sevulet-notepad atpkgs.sevulet-photoview atpkgs.sevulet-stickies ];
 
     programs.plasma = lib.mkIf cfg.plasma.enable {
       workspace = {
